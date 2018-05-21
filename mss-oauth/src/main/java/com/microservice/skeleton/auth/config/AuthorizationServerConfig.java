@@ -34,6 +34,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Autowired
     private DataSource dataSource;
+
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 

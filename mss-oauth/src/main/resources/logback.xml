@@ -7,9 +7,9 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/export/logs/Micro-Service-Skeleton/oauth-center/log.log</file>
+        <file>/var/log/micro-service-skeleton/oauth-center/log.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/export/logs/Micro-Service-Skeleton/oauth-center/log.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <fileNamePattern>/var/log/micro-service-skeleton/oauth-center/log.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -22,9 +22,9 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>ERROR</level>
         </filter>
-        <File>/export/logs/Micro-Service-Skeleton/oauth-center/error.log</File>
+        <File>/var/log/micro-service-skeleton/oauth-center/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/export/logs/Micro-Service-Skeleton/oauth-center/error-%d{yyyyMMdd}.log.%i
+            <fileNamePattern>/var/log/micro-service-skeleton/oauth-center/error-%d{yyyyMMdd}.log.%i
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>500MB</maxFileSize>
@@ -38,9 +38,9 @@
     </appender>
 
     <appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/export/logs/Micro-Service-Skeleton/oauth-center/sql.log</file>
+        <file>/var/log/micro-service-skeleton/oauth-center/sql.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/export/logs/Micro-Service-Skeleton/oauth-center/sql.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <fileNamePattern>/var/log/micro-service-skeleton/oauth-center/sql.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">

@@ -18,7 +18,7 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello() {
-        return "order";
+        return "hello";
     }
     @RequestMapping("/login")
     public String login() {

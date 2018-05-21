@@ -41,19 +41,23 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("用户:" + username + ",不存在!");
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        boolean enabled = true; // 可用性 :true:可用 false:不可用
-        boolean accountNonExpired = true; // 过期性 :true:没过期 false:过期
-        boolean credentialsNonExpired = true; // 有效性 :true:凭证有效 false:凭证无效
-        boolean accountNonLocked = true; // 锁定性 :true:未锁定 false:已锁定
+        // 可用性 :true:可用 false:不可用
+        boolean enabled = true;
+        // 过期性 :true:没过期 false:过期
+        boolean accountNonExpired = true;
+        // 有效性 :true:凭证有效 false:凭证无效
+        boolean credentialsNonExpired = true;
+        // 锁定性 :true:未锁定 false:已锁定
+        boolean accountNonLocked = true;
         List<RcRoleEntity> roleValues = roleService.getRoleValuesByUserId(userEntity.getId());
-        for (RcRoleEntity role:roleValues){
+        for (RcRoleEntity role : roleValues) {
             //角色必须是ROLE_开头，可以在数据库中设置
-            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_"+role.getValue());
+            GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" + role.getValue());
             grantedAuthorities.add(grantedAuthority);
             //获取权限
             List<RcMenuEntity> permissionList = permissionService.getPermissionsByRoleId(role.getId());
-            for (RcMenuEntity menu:permissionList
-                 ) {
+            for (RcMenuEntity menu : permissionList
+                    ) {
                 GrantedAuthority authority = new SimpleGrantedAuthority(menu.getCode());
                 grantedAuthorities.add(authority);
             }
