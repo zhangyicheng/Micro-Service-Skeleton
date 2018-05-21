@@ -20,7 +20,7 @@ spring:
     password: tta_redis_1877
 eureka:
   instance:
-    prefer-ip-address: true #ʹ��IPע��
+    prefer-ip-address: true #IP注册
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     ##续约更新时间间隔设置5秒，m默认30s
     lease-renewal-interval-in-seconds: 5
